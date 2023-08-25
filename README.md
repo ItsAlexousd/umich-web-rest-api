@@ -1,72 +1,42 @@
-# University of Michigan-Dearborn: Web Technology - RESTful API
+# UMich Web REST API 🌐
 
-RESTful API with Node.js, Express and MongoDB.
+Welcome to the UMich Web REST API, a comprehensive backend solution developed as part of the University of Michigan-Dearborn web development course. This API provides endpoints for user management and image operations, ensuring a seamless integration for web applications.
 
-## Prerequisites
+## 🚀 Features
 
-Before running the project, ensure that you have the following installed:
+- **User Management**: Register, login, and manage user profiles.
+- **Image Operations**: Upload, retrieve, and manage images.
+- **Secure Authentication**: Robust authentication using JWT tokens.
+- **Error Handling**: Middleware for handling and logging errors.
 
-- Node.js
-- MongoDB
+## 🛠️ Installation & Setup
 
-## Getting Started
+1. **Clone the Repository**:
+```bash
+git clone https://github.com/ItsAlexousd/umich-web-rest-api.git
+cd umich-web-rest-api
+```
 
-To get started, follow the instructions below:
-
-1. Install the dependencies:
-
+2. **Install Dependencies**:
 ```bash
 npm install
 ```
 
-2. Set up the environment variables:
-
-Create a new file named `.env` in the project root directory and add the following variables:
-
-```
-NODE_ENV=development
-PORT=5000
-MONGODB_URL=mongodb://your-mongodb-url
-JWT_SECRET=your-jwt-secret
-```
-
-Replace `your-mongodb-url` with the URL of your MongoDB database and `your-jwt-secret` with a secret key for JWT token generation.
-
-3. Start the server:
-
+3. **Run the API**:
 ```bash
 npm start
 ```
 
-The server will start running on __http://localhost:5000__.
+## 📄 API Endpoints
 
-## API Endpoints
+### User
 
-The following API endpoints are available:
+- Register: `POST /api/user/register`
+- Login: `POST /api/user/login`
+- Get Profile: `GET /api/user/profile`
 
-- `GET /api/v1/users` - Retrieve all users (requires authentication).
-- `POST /api/v1/users/signUp` - Sign up a new user.
-- `POST /api/v1/users/signIn` - Sign in an existing user.
+### Image
 
-## Project Structure
-
-The project follows a specific structure:
-
-- `index.js` - Entry point of the application.
-- `app.js` - Configures the Express application and sets up middleware.
-- `api` - Defines the API routes.
-- `config/db.js` - Connects to the MongoDB database.
-- `controllers` - Contains the logic for handling requests and responses.
-- `middlewares` - Contains custom middleware functions.
-- `models` - Defines the Mongoose schema for the user model.
-
-## Technologies Used
-
-The project uses the following technologies and libraries:
-
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- JSON Web Tokens (JWT)
-- Bcrypt.js
+- Upload Image: `POST /api/image/upload`
+- Get All Images: `GET /api/image/all`
+- Get Image by ID: `GET /api/image/:id`
